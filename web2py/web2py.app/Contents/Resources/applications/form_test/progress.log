@@ -1,0 +1,21 @@
+[2014-10-23 11:02:20] START
+[2014-10-23 11:02:42] EDIT form_test/controllers/default.py: -49
+[2014-10-23 11:03:11] CREATE default/display_form.html: 0
+[2014-10-23 11:03:32] EDIT form_test/views/default/display_form.html: 7
+[2014-10-23 11:29:01] EDIT form_test/controllers/default.py: 1
+[2014-10-23 11:29:19] EDIT form_test/views/default/display_form.html: -5
+[2014-10-23 11:29:54] EDIT form_test/views/default/display_form.html: 4
+[2014-10-23 11:29:57] EDIT form_test/views/default/display_form.html: 0
+[2014-10-23 11:30:12] EDIT form_test/controllers/default.py: 8
+[2014-10-23 11:38:13] EDIT form_test/controllers/default.py: 1
+[2014-10-23 11:39:01] EDIT form_test/controllers/default.py: -1
+[2014-10-23 11:39:26] EDIT form_test/controllers/default.py: 1
+[2014-10-23 11:39:48] EDIT form_test/controllers/default.py: -1
+[2014-10-23 11:40:06] EDIT form_test/controllers/default.py: 1
+[2014-10-23 11:41:09] EDIT form_test/controllers/default.py: 0
+[2014-10-23 11:44:37] EDIT form_test/controllers/default.py: 0
+[2014-10-23 11:46:13] EDIT form_test/controllers/default.py: 0
+[2014-10-23 11:46:33] EDIT form_test/controllers/default.py: 0
+[2014-10-23 11:46:53] EDIT form_test/controllers/default.py: 0
+[2014-10-23 11:48:13] EDIT form_test/controllers/default.py: 0
+[2014-10-23 11:49:17] EDIT form_test/controllers/default.py: -1

@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+
+<h1>
+    {{=category.name.title()}}
+</h1>
+
+{{for post in rows:}}
+<div class="well">
+    {{=post.title}}
+</div>
+{{pass}}

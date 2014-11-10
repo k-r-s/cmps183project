@@ -1,0 +1,26 @@
+{{extend 'layout.html'}}
+{{from gluon.contrib.markdown import WIKI}}
+<h1>Posts</h1>
+{{ for post in posts:}}
+   <h2>
+     <a href="{{=URL(r=request,f='view_post',args=post.id)}}">
+       {{=post.title}}
+     </a>
+   </h2>
+   {{=WIKI(post.body)}}
+ {{ pass }}
+Create now a view for a post and its comments. Do this by creating a new view file "default/view_post.html"
+
+ {{extend 'layout.html'}}
+ {{from gluon.contrib.markdown import WIKI}}
+ <h1>{{=post.title}}</h1>
+ <h2>by {{=post.author.first_name}}</h2>
+ {{=WIKI(post.body)}}
+ <h2>Comments</h2>
+ {{for comm in comms:}}
+   <blockquote>
+     {{=WIKI(comm.body)}}
+     <em>by {{=comm.author.first_name}}</em>
+   </blockquote>
+ {{ pass }}
+ {{=form}}

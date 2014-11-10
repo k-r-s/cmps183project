@@ -1,0 +1,7 @@
+{{extend 'layout.html'}}
+
+
+<h3>
+    Hello? Delete <i>{{=page.title}}</i>&nbsp???
+</h3>
+{{=form}}

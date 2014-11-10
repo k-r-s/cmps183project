@@ -1,0 +1,42 @@
+import datetime
+
+@auth.requires_login()
+def index():
+     statuses = db(db.status.created_by ==auth.user.id).select(db.status.id,db.status.created_by,db.status.created_on, db.status.body, orderby=db.status.created_on)
+     friendStatuses = db(db.friends.connection).select(db.status.id,db.status.created_by,db.status.created_on, db.status.body, orderby=db.status.created_on)
+     return dict(statuses=statuses, friendStatuses=friendStatuses)
+
+@auth.requires_login()
+def new():
+    form = SQLFORM(db.status).process(next=URL('index'))
+    return dict(form=form)
+
+@auth.requires_login()
+def edit():
+     current_status = db.status(request.args(0,cast=int)) or redirect(URL('index'))
+     form = SQLFORM(db.status, current_status).process(
+         next = URL('show',args=request.args))
+     return dict(form=form)
+
+@auth.requires_login()
+def show():
+    status = db.status(request.args(0, cast=int)) or redirect(URL('index'))
+    return dict(status=status)
+
+@auth.requires_login()
+def delete():
+    status = db.status(request.args(0, cast=int)) or redirect(URL('index'))
+
+    form=FORM(INPUT(_value='Yes', _type='submit', _name="bsubmit"),
+              INPUT(_value='No', _type='submit', _name="bsubmit"))
+
+    if request.vars.bsubmit == 'Yes':
+       db(db.status.id == status.id).delete()
+       redirect(URL('index'))
+    elif request.vars.bsubmit == 'No':
+       redirect(URL('index'))
+
+    return dict(form=form, status=status)
+
+def user():
+    return dict(form=auth())

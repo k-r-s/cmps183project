@@ -1,0 +1,11 @@
+[2014-10-26 22:53:09] START
+[2014-10-26 22:53:32] EDIT Hw1Notes/models/db.py: -12
+[2014-10-26 22:54:23] EDIT Hw1Notes/controllers/default.py: -24
+[2014-10-26 22:54:52] EDIT Hw1Notes/views/default/index.html: -8
+[2014-10-26 22:55:48] CREATE default/new.html: 0
+[2014-10-26 22:56:02] CREATE default/show.html: 0
+[2014-10-26 22:56:32] CREATE default/delete.html: 0
+[2014-10-26 22:57:14] EDIT Hw1Notes/views/default/new.html: 3
+[2014-10-26 22:57:30] EDIT Hw1Notes/views/default/show.html: 12
+[2014-10-26 22:57:52] EDIT Hw1Notes/views/default/delete.html: 2
+[2014-10-26 23:00:23] EDIT Hw1Notes/views/default/show.html: 0

@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+<h1>{{=status.created_by.first_name + " " + status.created_by.last_name}}</h1>
+<p>
+    {{=status.body}}
+</p>
+</p>
+<p> This status was published on {{=status.created_on}}.
+</p>
+<p>
+    {{=A('Back to Main', _href=URL('index'))}}
+</p>

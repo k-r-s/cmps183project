@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+<h1>{{=page.title}}</h1>
+<p>
+    {{=page.body}}
+</p>
+</p>
+<p> This note was created on {{=page.created_on}}.
+</p>
+<p>
+    {{=A('Back to Notes', _href=URL('index'))}}
+</p>

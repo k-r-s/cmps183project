@@ -1,0 +1,12 @@
+[2014-10-24 00:18:17] START
+[2014-10-24 00:18:51] EDIT favorite_dishes/models/db.py: -12
+[2014-10-24 00:19:09] EDIT favorite_dishes/controllers/default.py: -20
+[2014-10-24 00:19:38] EDIT favorite_dishes/controllers/default.py: 0
+[2014-10-24 00:19:40] EDIT favorite_dishes/models/db.py: 0
+[2014-10-24 00:19:47] EDIT favorite_dishes/views/default/index.html: -2
+[2014-10-24 00:20:12] CREATE default/show.html: 0
+[2014-10-24 00:20:24] EDIT favorite_dishes/views/default/show.html: 12
+[2014-10-24 00:20:52] CREATE default/delete.html: 0
+[2014-10-24 00:21:04] EDIT favorite_dishes/views/default/delete.html: 2
+[2014-10-24 00:43:08] EDIT favorite_dishes/views/default/delete.html: 0
+[2014-10-24 00:43:39] EDIT favorite_dishes/views/default/delete.html: 0

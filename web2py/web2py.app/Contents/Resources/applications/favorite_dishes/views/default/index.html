@@ -1,0 +1,30 @@
+{{extend 'layout.html'}}
+<h1>
+    {{=auth.user.first_name}}'s Favorite Dishes
+</h1>
+<h3>
+    Logged user:{{=auth.user.id}}
+</h3>
+<p>
+    {{if dishes:}} some dishes
+    {{else:}} no dishes
+    {{pass}}
+</p>
+<ul>
+    {{for dish in dishes:}}
+    {{=LI(A(dish.title, _href=URL("show", args=dish.id)))}}
+    {{pass}}
+</ul>
+<table>
+    {{for dish in dishes:}}
+    <tr><td>{{=LI(A(dish.title, _href=URL("show", args=dish.id)))}}</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>{{=dish.last_made}}</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>{{=LI(A('delete', _href=URL("delete", args=dish.id)))}}</td>
+    </tr>
+    {{pass}}
+</table>
+<p>
+    {{=A('Add new recipe', _href=URL("new"))}}
+</p>

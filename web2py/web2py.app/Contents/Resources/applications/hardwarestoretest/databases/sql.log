@@ -1,0 +1,181 @@
+timestamp: 2014-10-28T16:50:00.547188
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512)
+);
+success!
+timestamp: 2014-10-28T16:50:00.561877
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2014-10-28T16:50:00.578085
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2014-10-28T16:50:00.596040
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2014-10-28T16:50:00.617385
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2014-10-28T16:50:00.636673
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2014-11-04T16:30:19.167564
+ALTER TABLE auth_user ADD username CHAR(128);
+success!
+timestamp: 2014-11-04T17:04:22.665396
+CREATE TABLE supplier(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    address TEXT
+);
+success!
+timestamp: 2014-11-04T17:04:22.671194
+CREATE TABLE product(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    quantityInStore INTEGER,
+    price DOUBLE,
+    supplier INTEGER REFERENCES supplier (id) ON DELETE CASCADE,
+    quantityOnOrder INTEGER
+);
+success!
+timestamp: 2014-11-04T17:04:22.676755
+CREATE TABLE contactPerson(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    phone CHAR(512),
+    email CHAR(512),
+    employer INTEGER REFERENCES supplier (id) ON DELETE CASCADE,
+    description TEXT
+);
+success!
+timestamp: 2014-11-04T17:04:22.680462
+CREATE TABLE customer(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    phone CHAR(512),
+    email CHAR(512)
+);
+success!
+timestamp: 2014-11-04T17:04:22.684408
+CREATE TABLE purchase(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    purchaser INTEGER REFERENCES customer (id) ON DELETE CASCADE,
+    purchaseDate TIMESTAMP,
+    total DOUBLE
+);
+success!
+timestamp: 2014-11-04T17:04:22.689466
+CREATE TABLE itemBought(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item INTEGER REFERENCES product (id) ON DELETE CASCADE,
+    purchase INTEGER REFERENCES purchase (id) ON DELETE CASCADE,
+    pricedouble CHAR(512),
+    quantity INTEGER
+);
+success!
+timestamp: 2014-11-06T21:46:35.834598
+ALTER TABLE itemBought ADD price DOUBLE;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2014-11-06T21:51:39.283719
+ALTER TABLE itemBought ADD purchaseid INTEGER REFERENCES purchase (id) ON DELETE CASCADE;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!

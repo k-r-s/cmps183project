@@ -1,0 +1,10 @@
+[2014-10-23 12:38:14] START
+[2014-10-23 12:38:36] EDIT images/models/db.py: -11
+[2014-10-23 12:39:22] EDIT images/controllers/default.py: -48
+[2014-10-23 12:39:56] EDIT images/views/default/index.html: -25
+[2014-10-23 12:40:34] EDIT images/controllers/default.py: 10
+[2014-10-23 12:41:31] CREATE default/show.html: 0
+[2014-10-23 12:41:41] EDIT images/views/default/show.html: 13
+[2014-10-23 12:42:16] EDIT images/models/db.py: 3
+[2014-10-23 12:43:07] EDIT images/controllers/default.py: 5
+[2014-10-23 12:44:27] EDIT images/models/menu.py: -110
