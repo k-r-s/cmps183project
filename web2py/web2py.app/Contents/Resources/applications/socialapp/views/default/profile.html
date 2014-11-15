@@ -1,0 +1,40 @@
+{{extend 'layout.html'}}
+<style>
+    .editables{
+        display:none;
+    }
+    .status.hover .editables{
+        display:inline;
+    }
+</style>
+<script type="javascript">
+    $('.status').hover(function(){
+        console.log("hi there");
+    });
+</script>
+<! Name should change depending on who the user is >
+<h1>Username's/Your Profile Page </h1>
+
+<table>
+    <h2>Friends</h2>
+    {{for connection in friends:}}
+        <b>{{=connection}}</b>
+    {{pass}}
+</table>
+
+<! Button shouldn't be visible if it's a different user>
+{{=A('Publish new status', _href=URL('new'), _class="btn btn-primary", _type="button")}}
+{{=A('Return to News Feed', _href=URL('index'), _class="btn btn-primary", _type="button")}}
+<table>
+    {{for status in statuses:}}
+    <div class="status well">
+        <b>{{=status.created_by.first_name + " " + status.created_by.last_name}}</b>
+        <p>{{=status.body}}</p>
+        <div>
+            {{=prettydate(status.created_on)}}<span class="editables"> |
+            {{=A('delete', _href=URL("delete", args=status.id))}} |
+            {{=A('edit', _href=URL("edit", args=status.id))}}</span>
+        </div>
+    </div>
+    {{pass}}
+</table>

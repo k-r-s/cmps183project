@@ -7,6 +7,12 @@ def index():
      return dict(statuses=statuses, friendStatuses=friendStatuses)
 
 @auth.requires_login()
+def profile():
+     statuses = db(db.status.created_by ==auth.user.id).select(db.status.id,db.status.created_by,db.status.created_on, db.status.body, orderby=~db.status.created_on)
+     friends = db(db.friends.source ==auth.user.id).select(db.friends.connection)
+     return dict(statuses=statuses, friends=friends)
+
+@auth.requires_login()
 def new():
     form = SQLFORM(db.status).process(next=URL('index'))
     return dict(form=form)
