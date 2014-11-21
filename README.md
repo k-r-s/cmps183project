@@ -15,5 +15,3 @@ Profile:
 ability to add profile avatar
 show recent posts/activities
 
-also, not sure in which occasion would routes.py be used... could absolute path names with modification not do it?
-
