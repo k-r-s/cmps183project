@@ -1,0 +1,18 @@
+{{for status in statuses:}}
+            <div class="status" style="padding:3px;">
+                <div style="padding:10px;background:white;-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px;-khtml-border-radius: 6px;">
+                    <div style="display:inline">
+                        <div>
+                            <b>{{=status.created_by.first_name + " " + status.created_by.last_name}}</b>
+                        </div>
+                        <img src="{{=URL('download',args=status.created_by.profile_picture)}}" width="100" height="100" />
+                    </div>
+                    <p style="font-size:25px;display:inline">{{=status.body}}</p>
+                    <div>
+                        {{=prettydate(status.created_on)}}<span class="editables"> |
+                        {{=A('delete', _href=URL("delete", args=status.id))}} |
+                        {{=A('edit', _href=URL("edit", args=status.id))}}</span>
+                    </div>
+                </div>
+            </div>
+            {{pass}}

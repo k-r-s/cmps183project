@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.TypeError'> long() argument must be a string or a number, not 'Table'"
+p3
+sS'layer'
+p4
+S'/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/applications/socialapp/controllers/default.py'
+p5
+sS'code'
+p6
+S'import datetime\n\n@auth.requires_login()\ndef index():\n    db.status.created_by.default = db.auth_user.id\n    db.status.created_on.default = request.now\n    friends = [db.auth_user.id]+[row.connection for row in myfriends.select(db.friend_connection.connection)]\n    statuses = db(status.created_by.belongs(friends)).select(orderby=~status.created_on,limitby=(0,100))\n    return locals()\n\n@auth.requires_login()\ndef new():\n    form = SQLFORM(db.status).process(next=URL(\'index\'))\n    return dict(form=form)\n\n@auth.requires_login()\ndef edit():\n     current_status = db.status(request.args(0,cast=int)) or redirect(URL(\'index\'))\n     form = SQLFORM(db.status, current_status).process(\n         next = URL(\'show\',args=request.args))\n     return dict(form=form)\n\n@auth.requires_login()\ndef show():\n    status = db.status(request.args(0, cast=int)) or redirect(URL(\'index\'))\n    return dict(status=status)\n\n@auth.requires_login()\ndef delete():\n    status = db.status(request.args(0, cast=int)) or redirect(URL(\'index\'))\n\n    form=FORM(INPUT(_value=\'Yes\', _type=\'submit\', _name="bsubmit"),\n              INPUT(_value=\'No\', _type=\'submit\', _name="bsubmit"))\n\n    if request.vars.bsubmit == \'Yes\':\n       db(db.status.id == status.id).delete()\n       redirect(URL(\'index\'))\n    elif request.vars.bsubmit == \'No\':\n       redirect(URL(\'index\'))\n\n    return dict(form=form, status=status)\n\ndef user():\n    return dict(form=auth())\n\nresponse._vars=response._caller(index)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/gluon/restricted.py", line 224, in restricted\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/applications/socialapp/controllers/default.py", line 46, in <module>\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/gluon/globals.py", line 392, in <lambda>\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/gluon/tools.py", line 3439, in f\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/applications/socialapp/controllers/default.py", line 7, in index\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/gluon/dal.py", line 10749, in select\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/gluon/dal.py", line 2472, in select\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/gluon/dal.py", line 1868, in select\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/gluon/dal.py", line 1767, in _select\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/gluon/dal.py", line 1544, in expand\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/gluon/dal.py", line 1382, in AND\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/gluon/dal.py", line 1544, in expand\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/gluon/dal.py", line 1440, in EQ\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/gluon/dal.py", line 1555, in expand\n  File "/Users/kevrstew/Desktop/web2py/web2py.app/Contents/Resources/gluon/dal.py", line 2012, in represent\nTypeError: long() argument must be a string or a number, not \'Table\'\n'
+p11
+s.

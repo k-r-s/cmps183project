@@ -2,10 +2,10 @@ import datetime
 
 @auth.requires_login()
 def index():
-     statuses = db(db.status.created_by ==auth.user.id).select(db.status.id,db.status.created_by,db.status.created_on, db.status.body, orderby=db.status.created_on)
-     friendStatuses = db(db.friends.connection).select(db.status.id,db.status.created_by,db.status.created_on, db.status.body, orderby=db.status.created_on)
-     return dict(statuses=statuses, friendStatuses=friendStatuses)
-
+    friends_list = db(db.friend_connection.user==auth.user.id)(db.friend_connection.friends==True).select(db.friend_connection.connection)
+    statuses = db((db.status.created_by==auth.user.id)|(db.status.created_by==db.friend_connection.connection)&(db.friend_connection.user==auth.user.id)&(db.friend_connection.friends==True)).select(db.status.id, db.status.created_by, db.status.created_on, db.status.body, orderby=~db.status.created_on, distinct=True)
+    return locals()
+    
 @auth.requires_login()
 def new():
     form = SQLFORM(db.status).process(next=URL('index'))
@@ -37,6 +37,9 @@ def delete():
        redirect(URL('index'))
 
     return dict(form=form, status=status)
+
+def download():
+    return response.download(request, db)
 
 def user():
     return dict(form=auth())
