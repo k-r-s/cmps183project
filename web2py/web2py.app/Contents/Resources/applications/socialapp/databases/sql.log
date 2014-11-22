@@ -517,6 +517,7 @@ success!
 success!
 success!
 success!
+<<<<<<< HEAD
 timestamp: 2014-11-15T13:48:15.565242
 CREATE TABLE friend_connection(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -7243,6 +7244,8 @@ success!
 success!
 success!
 success!
+=======
+>>>>>>> FETCH_HEAD
 success!
 success!
 success!

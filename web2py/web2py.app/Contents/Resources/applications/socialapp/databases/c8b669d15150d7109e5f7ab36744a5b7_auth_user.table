@@ -199,18 +199,26 @@ p59
 sg19
 I00
 sg20
+<<<<<<< HEAD
 S'password'
 p60
 ssS'id'
 p61
 (dp62
+=======
+g28
+ssS'email'
+p39
+(dp40
+>>>>>>> FETCH_HEAD
 g14
 I512
 sg15
 I00
 sg16
-I1
+I4
 sg17
+<<<<<<< HEAD
 S'INTEGER PRIMARY KEY AUTOINCREMENT'
 p63
 sg19
@@ -221,6 +229,17 @@ p64
 ssS'registration_id'
 p65
 (dp66
+=======
+S'CHAR(512)'
+p41
+sg19
+I00
+sg20
+g21
+ssS'reset_password_key'
+p42
+(dp43
+>>>>>>> FETCH_HEAD
 g14
 I512
 sg15
@@ -229,6 +248,7 @@ sg16
 I8
 sg17
 S'CHAR(512)'
+<<<<<<< HEAD
 p67
 sg19
 I00
@@ -237,6 +257,16 @@ g25
 ssS'registration_key'
 p68
 (dp69
+=======
+p44
+sg19
+I00
+sg20
+g21
+ssS'created_on'
+p45
+(dp46
+>>>>>>> FETCH_HEAD
 g14
 I512
 sg15
@@ -244,6 +274,7 @@ I00
 sg16
 I6
 sg17
+<<<<<<< HEAD
 S'CHAR(512)'
 p70
 sg19
@@ -253,6 +284,18 @@ g25
 ssS'modified_by'
 p71
 (dp72
+=======
+S'TIMESTAMP'
+p47
+sg19
+I00
+sg20
+S'datetime'
+p48
+ssS'modified_on'
+p49
+(dp50
+>>>>>>> FETCH_HEAD
 g14
 I512
 sg15
@@ -260,6 +303,7 @@ I00
 sg16
 I16
 sg17
+<<<<<<< HEAD
 S'INTEGER REFERENCES auth_user (id) ON DELETE CASCADE'
 p73
 sg19
@@ -270,6 +314,17 @@ p74
 ssS'created_by'
 p75
 (dp76
+=======
+S'TIMESTAMP'
+p51
+sg19
+I00
+sg20
+g48
+ssS'password'
+p52
+(dp53
+>>>>>>> FETCH_HEAD
 g14
 I512
 sg15
@@ -277,6 +332,7 @@ I00
 sg16
 I14
 sg17
+<<<<<<< HEAD
 S'INTEGER REFERENCES auth_user (id) ON DELETE CASCADE'
 p77
 sg19
@@ -286,6 +342,18 @@ g74
 ssS'first_name'
 p78
 (dp79
+=======
+S'CHAR(512)'
+p54
+sg19
+I00
+sg20
+S'password'
+p55
+ssS'registration_key'
+p56
+(dp57
+>>>>>>> FETCH_HEAD
 g14
 I128
 sg15
@@ -293,6 +361,7 @@ I00
 sg16
 I2
 sg17
+<<<<<<< HEAD
 S'CHAR(128)'
 p80
 sg19
@@ -302,17 +371,38 @@ g25
 ssS'email'
 p81
 (dp82
+=======
+S'CHAR(512)'
+p58
+sg19
+I00
+sg20
+g21
+ssS'id'
+p59
+(dp60
+>>>>>>> FETCH_HEAD
 g14
 I512
 sg15
 I00
 sg16
-I4
+I1
 sg17
+<<<<<<< HEAD
 S'CHAR(512)'
 p83
 sg19
 I00
 sg20
 g25
+=======
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p61
+sg19
+I00
+sg20
+S'id'
+p62
+>>>>>>> FETCH_HEAD
 ss.
